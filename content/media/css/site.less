@@ -1,0 +1,58 @@
+---
+uses_template: false
+---
+
+@import "bootstrap.less";
+
+html, body {
+  background-color: @grayDark;
+  color: @grayLight;
+}
+
+h1, h2, h3, h4, h5, h6, .brand, .topbar {
+  font-family: 'Josefin Sans', sans-serif;  
+}
+
+body {
+  padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
+}
+footer {
+  border-top: none;
+}
+.container > footer p {
+  text-align: center; /* center align it with the container */
+}
+
+.panoviewer {
+  background-color: black;
+  padding: 10px;
+  width: 920px;
+  height: 600px;
+}
+
+.panothumb {
+  border: 10px solid black;
+  margin-left: -10px;
+}
+
+/* The white background content wrapper */
+.container > .content {
+  color: @grayDark;
+  background-color: @grayLight;
+  padding: 20px;
+  margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
+  .border-radius;
+  -webkit-border-radius: 0 0 1px 6px;
+     -moz-border-radius: 0 0 1px 6px;
+          border-radius: 0 0 6px 6px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+          box-shadow: 0 1px 2px rgba(0,0,0,.15);
+}
+
+/* Page header tweaks */
+.page-header {
+  background-color: @grayLighter;
+  padding: 20px 20px 10px;
+  margin: -20px -20px 20px;
+}

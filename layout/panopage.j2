@@ -1,0 +1,25 @@
+{% extends "columns.j2" %}
+
+{% block scripts %}
+<script src="{{ media_url('js/libs/ZoomifyImageViewer.js') }}"></script>
+<script>
+  Z.showImage("panoviewer",
+      "{{ full_url('//panoimages/' + resource.slug + '/zoomify') }}", 
+      "zSkinPath={{ '/' + media_url('zoomify/Skins/Dark') }}&zLogoVisible=0");
+</script>
+{% endblock %}
+
+{% block main %}
+<div class="row">
+  <div class="span16">
+    <div id="panoviewer" class="panoviewer"></div>
+  </div>
+</div>
+<div class="row">
+  <div class="span16">
+    {% filter markdown %}
+{{ resource.meta.photodescription }}
+    {% endfilter %}
+  </div>
+</div>
+{% endblock %}

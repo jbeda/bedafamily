@@ -1,0 +1,26 @@
+---
+title: Panorama Photography
+extends: columns.j2
+default_block: main
+---
+
+{% for res in resource.node.root.node_from_relative_path('panos').walk_resources_sorted_by_pano() %}
+<div class="row">
+	<div class="span6">
+		<h2>{{ res.meta.title }}</h3>
+	</div>
+	<div class="span10">
+{% filter markdown %}
+{{ res.meta.photodescription }}
+{% endfilter %}
+	</div>	
+</div>
+
+<div class="row">
+	<div class="span16">
+		<a href="{{ res.url }}">
+		  <img class=panothumb src="{{ content_url('/panoimages/' + res.meta.panoname + '/thumb.jpg') }}">
+		</a>
+	</div>
+</div>
+{% endfor %}

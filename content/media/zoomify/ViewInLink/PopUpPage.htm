@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <script type="text/javascript" src="../../ZoomifyImageViewer.js"></script>
+        <style type="text/css"> #myContainer { width: 900px; height: 550px } </style>
+
+        <script type="text/javascript" >
+			var urlString = document.location.href;
+			var paramIndex = urlString.indexOf("?")+1;
+			var paramString = urlString.substring(paramIndex,urlString.length);
+			var imagePathEndIndex = paramString.indexOf("&");
+			var imagePath = paramString.substring("zImagePath=".length,imagePathEndIndex);
+			var optionalParams = paramString.substring(imagePathEndIndex+1,paramString.length);
+        	Z.showImage("myContainer", imagePath, optionalParams);
+        </script>
+
+    </head>
+    <body>
+		<div align="center"><br>
+			<table width="100" border=0 align="center" cellpadding=1 cellspacing=0 bgcolor=#000000 >
+				<tr>
+					<td>
+						<table width=100% border=0 align="center" cellpadding=0 cellspacing=0 bgcolor=#ffffff>
+							<tr>
+								<td>
+
+									<div id="myContainer"></div>
+
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+    </body>
+</html>
+

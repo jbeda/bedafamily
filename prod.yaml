@@ -1,0 +1,6 @@
+extends: site.yaml
+mode: production
+publisher:
+  sftp:
+    type: hyde.ext.publishers.pyfs.PyFS
+    url: sftp://jbeda@slice.bedafamily.com/home/jbeda/sites/bedafamily/www
