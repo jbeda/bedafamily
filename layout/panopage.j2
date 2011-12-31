@@ -1,5 +1,9 @@
 {% extends "columns.j2" %}
 
+{% block endhead %}
+  <link rel="image_src" type="image/jpeg" href="{{ full_url('/panoimages/' + resource.slug + '/thumb.jpg') }}" />
+{% endblock %}
+
 {% block scripts %}
 <script src="{{ media_url('js/libs/ZoomifyImageViewer.js') }}"></script>
 <script>

@@ -4,7 +4,8 @@
     {% block starthead %}{% endblock starthead %}
     <meta charset="{{ resource.meta.charset }}">
     <title>{% block title %}{{ resource.meta.title }}{% endblock %} | {{ site_title }}</title>
-    <meta name="description" content="{{ resource.meta.description }}">
+    <meta name="title" content="{{ self.title() }} | {{ site_title }}">
+    <meta name="description" content="{{ resource.meta.description | markdown | striptags }}">
     <meta name="author" content="{{ resource.meta.author }}">
 
     {# Le HTML5 shim, for IE6-8 support of HTML elements #}
