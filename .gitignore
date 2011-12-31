@@ -1,4 +1,4 @@
-layout/deploy
 deploy
+prod_deploy
 *.hyde_deps
 *.DS_Store

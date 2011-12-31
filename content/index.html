@@ -5,22 +5,21 @@ default_block: main
 ---
 
 {% for res in resource.node.root.node_from_relative_path('panos').walk_resources_sorted_by_pano() %}
-<div class="row">
-	<div class="span6">
+<div class="row panoitem">
+	<div class="span4">
 		<h2>{{ res.meta.title }}</h3>
 	</div>
-	<div class="span10">
-{% filter markdown %}
-{{ res.meta.photodescription }}
-{% endfilter %}
-	</div>	
-</div>
-
-<div class="row">
-	<div class="span16">
+	<div class="span12">
 		<a href="{{ res.url }}">
 		  <img class=panothumb src="{{ content_url('/panoimages/' + res.meta.panoname + '/thumb.jpg') }}">
 		</a>
+		{% if res.meta.photodescription %}
+		<p>
+{% filter markdown %}
+{{ res.meta.photodescription }}
+{% endfilter %}
+    </p>
+    {% endif %}
 	</div>
 </div>
 {% endfor %}

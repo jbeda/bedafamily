@@ -12,6 +12,7 @@ plugins:
     - hyde.ext.plugins.less.LessCSSPlugin
     - hyde.ext.plugins.syntext.SyntextPlugin
     - hyde.ext.plugins.textlinks.TextlinksPlugin
+    - hyde.ext.plugins.urls.UrlCleanerPlugin
 context:
     data:
         site_title: Joe Beda's Photos
@@ -19,10 +20,10 @@ context:
             name: Joe Beda
             url: "mailto:joe.site@bedafamily.com"
         google_analytics_id: UA-XXXXX-YY
-        home_url: /
+        home_url: /index.html
         menu:
             - title: Photos
-              url: /
+              url: /index.html
             - title: About
               url: /about.html
 sorter:
@@ -41,3 +42,6 @@ meta:
 less:
   args:
     include-path: 'content/media/css/bootstrap'
+urlcleaner:
+  index_file_names:
+    - index.html
