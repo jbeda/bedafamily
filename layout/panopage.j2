@@ -9,8 +9,8 @@
 <script src="{{ media_url('js/libs/ZoomifyImageViewer.js') }}"></script>
 <script>
   Z.showImage("panoviewer",
-      "{{ full_url('//panoimages/' + resource.slug + '/zoomify') }}", 
-      "zSkinPath={{ '/' + media_url('zoomify/Skins/Dark') }}&zLogoVisible=0");
+      "{{ full_url('/panoimages/' + resource.slug + '/zoomify') }}", 
+      "zSkinPath={{ media_url('zoomify/Skins/Dark') }}&zLogoVisible=0");
 </script>
 {% endblock %}
 
